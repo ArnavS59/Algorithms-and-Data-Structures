@@ -1,0 +1,19 @@
+# Line width of the axes
+set border linewidth 1.5
+# Line styles
+set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2
+set style line 2 linecolor rgb '#dd181f' linetype 1 linewidth 2
+set style line 3 linecolor rgb '#00ff00' linetype 1 linewidth 2
+set style line 4 linecolor rgb '#cc00ff' linetype 1 linewidth 2
+# x and y ranges
+set xrange [0:10000]
+set yrange [0:40000]
+# x and y labels
+set logscale y 2
+set xlabel "Position of n"
+set ylabel "Time in microseconds"
+# plot all functions
+plot "output.txt" using 1:2 title "Naive Case" with lines linestyle 1, \
+     "output.txt" using 1:3 title "Bottom-up Case" with lines linestyle 2, \
+     "output.txt" using 1:4 title "closed case" with lines linestyle 3, \
+     "output.txt" using 1:5 title "matrix case" with lines linestyle 4 
